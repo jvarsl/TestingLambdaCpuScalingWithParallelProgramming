@@ -6,32 +6,31 @@
 
 ## Collected stats
 
-| Compute    | Size       | DoSearchAsync | Sync method | DoSearchAsyncTwoTasksComputation | Unit |
-| ---------- | ---------- | ------------- | ----------- | -------------------------------- | ---- |
-| Local      | 10 cores   | 0.22          | 1.2         |                                  | s    |
-| AWS Lambda | 512        | 8.7           | 8.6         |                                  | s    |
-| AWS Lambda | 1024       | 4.1           | 4           |                                  | s    |
-| AWS Lambda | 2000       | 2.1           | 2.5         |                                  | s    |
-| AWS Lambda | 3008 (max) | 1.6           | 2.5         |                                  | s    |
-| AWS Lambda | 1400       | 3168          | 3207        |                                  | ms   |
-| AWS Lambda | 1500       | 2961          |             |                                  | ms   |
-| AWS Lambda | 1700       | 2588          |             |                                  | ms   |
-| AWS Lambda | 1800       | 2505          |             |                                  | ms   |
-| AWS Lambda | 1850       | 2423          |             |                                  | ms   |
-| AWS Lambda | 1900       | 2329          | ~2500       |                                  | ms   |
-| AWS Lambda | 2000       | 2230          | ~2500       |                                  | ms   |
-| AWS Lambda | 2048       | 2190          | 2542        |                                  | ms   |
-| AWS Lambda | 2100       | 2129          | ~2500       |                                  | ms   |
-| AWS Lambda | 3000       | 1582          | ~2500       |                                  | ms   |
-| AWS Lambda | 1024       | 4297          | 4384        | 8668                             | ms   |
-| AWS Lambda | 1768       | 2508          | 2479        | 5014                             | ms   |
-| AWS Lambda | 1770       | 2446          | 2544        | 4982                             | ms   |
-| AWS Lambda | 1850       | 2438          | 2371        | 4752                             | ms   |
-| AWS Lambda | 1900       |               |             | 4637                             | ms   |
-| AWS Lambda | 2200       |               |             | 3958                             | ms   |
-| AWS Lambda | 2700       |               |             | 3228                             | ms   |
-| AWS Lambda | 3008       | 2462          | 1720        | 2980                             | ms   |
-| Local      | 10 cores   | 1218          |             | 1240                             | ms   |
+| Compute    | Size       | DoSearchAsync | DoSearchSync | DoSearchAsyncTwoTasksComputation | Unit |
+| ---------- | ---------- | ------------- | ------------ | -------------------------------- | ---- |
+| Local      | 10 cores   | 0.22          | 1.2          | 1.2                              | s    |
+| AWS Lambda | 512        | 8.7           | 8.6          |                                  | s    |
+| AWS Lambda | 1024       | 4.1           | 4            |                                  | s    |
+| AWS Lambda | 2000       | 2.1           | 2.5          |                                  | s    |
+| AWS Lambda | 3008 (max) | 1.6           | 2.5          |                                  | s    |
+| AWS Lambda | 1400       | 3168          | 3207         |                                  | ms   |
+| AWS Lambda | 1500       | 2961          |              |                                  | ms   |
+| AWS Lambda | 1700       | 2588          |              |                                  | ms   |
+| AWS Lambda | 1800       | 2505          |              |                                  | ms   |
+| AWS Lambda | 1850       | 2423          |              |                                  | ms   |
+| AWS Lambda | 1900       | 2329          | ~2500        |                                  | ms   |
+| AWS Lambda | 2000       | 2230          | ~2500        |                                  | ms   |
+| AWS Lambda | 2048       | 2190          | 2542         |                                  | ms   |
+| AWS Lambda | 2100       | 2129          | ~2500        |                                  | ms   |
+| AWS Lambda | 3000       | 1582          | ~2500        |                                  | ms   |
+| AWS Lambda | 1024       | 4384          | 4297         | 8668                             | ms   |
+| AWS Lambda | 1768       | 2479          | 2508         | 5014                             | ms   |
+| AWS Lambda | 1770       | 2544          | 2446         | 4982                             | ms   |
+| AWS Lambda | 1850       | 2371          | 2438         | 4752                             | ms   |
+| AWS Lambda | 1900       |               |              | 4637                             | ms   |
+| AWS Lambda | 2200       |               |              | 3958                             | ms   |
+| AWS Lambda | 2700       |               |              | 3228                             | ms   |
+| AWS Lambda | 3008       | 1720          | 2462         | 2980                             | ms   |
 
 #### Interesting read but bit conflicting information and also doesn't find magical spot where new core unleashes new powers, it grows lineary
 
