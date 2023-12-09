@@ -1,3 +1,13 @@
+## Rough sketch, description about the tasks
+
+Searches prime numbers in 0 - 10 million range.
+
+Methods:
+
+- DoSearchAsync - splits into 10 tasks and asks to execute in parallel
+- DoSearchSync - run all 10 million check in one method (single task)
+- DoSearchAsyncTwoTasksComputation - executes DoSearchSync method in parallel
+
 ## Learnings
 
 - Did not learn any magical tricks (AWS account was limited to max 3008mb size)
