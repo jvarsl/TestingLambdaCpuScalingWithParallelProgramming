@@ -11,7 +11,7 @@ Methods:
 ## Learnings
 
 - Did not learn any magical tricks (AWS account was limited to max 3008mb size)
-- Sync (single core/CPU utilization) performance plateaued at ~1800mb for ~2500ms time. Found later confirmation https://docs.aws.amazon.com/lambda/latest/dg/configuration-function-common.html#:~:text=At%201%2C769%20MB%2C%20a%20function%20has%20the%20equivalent%20of%20one%20vCPU%20(one%20vCPU%2Dsecond%20of%20credits%20per%20second).
+- Sync (single core/CPU utilization) performance plateaued at ~1800mb for ~2500ms time. Found later confirmation https://docs.aws.amazon.com/lambda/latest/dg/configuration-function-common.html#:~:text=At%201%2C769%20MB%2C%20a%20function%20has%20the%20equivalent%20of%20one%20vCPU%20(one%20vCPU%2Dsecond%20of%20credits%20per%20second). At 3600mb two full power cores are reached to run DoSearchSync and DoSearchAsyncTwoTasksComputation(DoSearchSync twice) in ~2500ms.
 - In both async methods the gains continue to grow. Unsure how load is being spread, how much cores we have access to at the start but in all parallel tasks more memory led to little better performance so it seems new slow cores were not added and power scaled lineary (no magical second CPU/core appears).
 
 ## Collected stats
@@ -41,6 +41,8 @@ Methods:
 | AWS Lambda | 2200       |               |              | 3958                             | ms   |
 | AWS Lambda | 2700       |               |              | 3228                             | ms   |
 | AWS Lambda | 3008       | 1720          | 2462         | 2980                             | ms   |
+| AWS Lambda | 3600       | 1247          | 2457         | 2495                             | ms   |
+| AWS Lambda | 10240      | 581           | 2437         | 2465                             | ms   |
 
 #### Interesting read but bit conflicting information and also doesn't find magical spot where new core unleashes new powers, it grows lineary
 
